@@ -8,6 +8,7 @@ import image from "../assets/result.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Formik, Form } from "formik"
+import { TextField } from "@mui/material";
 
 const loginSchema = {}
 
@@ -60,11 +61,21 @@ const Login = () => {
                actions.setSubmitting(false);   
             }}
           >
-            {({ values, isSubmitting, handleChange, handleBlur})=> {
+            {({ values, isSubmitting, handleChange, handleBlur})=> (
               <Form>
-                
+                <Box>
+                 <TextField
+                 label="Email"
+                 name="email"                 
+                 id="email"
+                 type="email"
+                 variant="outlined"
+                 values={values.email}
+                 onChange={handleChange}
+                 />
+                </Box>
               </Form>
-            }}
+            )}
           </Formik>
 
           <Box sx={{ textAlign: "center", mt: 2 }}>
