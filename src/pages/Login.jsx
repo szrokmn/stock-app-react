@@ -7,7 +7,7 @@ import LockIcon from "@mui/icons-material/Lock";
 import image from "../assets/result.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Formik } from "formik"
+import { Formik, Form } from "formik"
 
 const loginSchema = {}
 
@@ -55,8 +55,16 @@ const Login = () => {
           <Formik
             initialValues={{email:"", password:""}}
             validationSchema={loginSchema}
+            onSubmit={(values, actions)=> {
+               actions.resetForm();
+               actions.setSubmitting(false);   
+            }}
           >
-
+            {({ values, isSubmitting, handleChange, handleBlur})=> {
+              <Form>
+                
+              </Form>
+            }}
           </Formik>
 
           <Box sx={{ textAlign: "center", mt: 2 }}>
