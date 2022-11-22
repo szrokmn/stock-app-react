@@ -1,17 +1,16 @@
-import React from 'react'
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { fetchFail, loginSuccess } from "../features/authSlice";
+import { fetchFail, fetchStart, loginSuccess } from "../features/authSlice";
 
 const BASE_URL = "https://clarusway.pythonanywhere.com/";
 
 const useAuthCall = () => {
-    
+
     const dispatch = useDispatch()
 
     const login = async (userInfo) => {
-        try {
-            useDispatch(fetchStart())
+        dispatch(fetchStart());
+        try {            
             const { data } = await axios.post(`${BASE_URL}account/auth/login/`, userInfo);
             dispatch(loginSuccess());
             return data;
@@ -21,9 +20,7 @@ const useAuthCall = () => {
         }
     };
 
-  return (
-   
-  )
+  return { login }
 }
 
 export default useAuthCall
