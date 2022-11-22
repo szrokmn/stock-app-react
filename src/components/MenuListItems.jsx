@@ -11,48 +11,54 @@ import StarsIcon from "@mui/icons-material/Stars";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import { useNavigate } from "react-router-dom";
-// import { iteratorSymbol } from "immer/dist/internal";
 
 const icons = [
-    {
-      title: "Dashboard",
-      icon: <DashboardIcon />,
-      url: "/stock/",
-    },
-    {
-      title: "Purchase",
-      icon: <ShoppingCartIcon />,
-      url: "/stock/purchases/",
-    },
-    {
-      title: "Sales",
-      icon: <AttachMoneyIcon />,
-      url: "/stock/sales/",
-    },
-    {
-      title: "Firms",
-      icon: <StoreIcon />,
-      url: "/stock/firms/",
-    },
-    {
-      title: "Brands",
-      icon: <StarsIcon />,
-      url: "/stock/brands/",
-    },
-    {
-      title: "Products",
-      icon: <InventoryIcon />,
-      url: "/stock/products/",
-    },
-    {
-      title: "Admin Panel",
-      icon: <SupervisorAccountIcon />,
-      url: "https://14164.fullstack.clarusway.com/admin",
-    },
-  ];
+  {
+    icon: <DashboardIcon />,
+    title: "Dashboard",
+    url: "/stock/",
+  },
+  {
+    title: "Purchase",
+    icon: <ShoppingCartIcon />,
+    url: "/stock/purchases/",
+  },
+  {
+    title: "Sales",
+    icon: <AttachMoneyIcon />,
+    url: "/stock/sales/",
+  },
+  {
+    title: "Firms",
+    icon: <StoreIcon />,
+    url: "/stock/firms/",
+  },
+  {
+    title: "Brands",
+    icon: <StarsIcon />,
+    url: "/stock/brands/",
+  },
+  {
+    title: "Products",
+    icon: <InventoryIcon />,
+    url: "/stock/products/",
+  },
+  {
+    title: "Admin Panel",
+    icon: <SupervisorAccountIcon />,
+    url: "https://14164.fullstack.clarusway.com/admin",
+  },
+];
 
-const MenuListItems = () => {
-    const navigate = useNavigate();
+const iconStyle = {
+  color: "#eee",
+  "& .MuiSvgIcon-root": { color: "#eee" },
+  "&:hover": { color: "red" },
+  "&:hover .MuiSvgIcon-root": { color: "red" },
+};
+
+const MenuListItems = () => {  
+  const navigate = useNavigate();
   return (
     <div>
       <List>
@@ -75,7 +81,7 @@ const MenuListItems = () => {
         ))}
       </List>
     </div>
-  )
-}
+  );
+};
 
-export default MenuListItems
+export default MenuListItems;
