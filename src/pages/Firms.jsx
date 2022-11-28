@@ -8,7 +8,7 @@ import useStockCalls from "../hooks/useStockCalls";
 
 const Firms = () => {
 
-  const {getFirms,getSales} = useStockCalls();
+  const { getFirms, getSales } = useStockCalls();
 
   // const dispatch = useDispatch();
   // const { token } = useSelector((state) => state.auth);
