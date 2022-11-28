@@ -12,7 +12,7 @@ const Firms = () => {
 
   // const dispatch = useDispatch();
   // const { token } = useSelector((state) => state.auth);
-  // const BASE_URL = "https://14163.fullstack.clarusway.com/";
+  // const BASE_URL = "https://14164.fullstack.clarusway.com/";
 
   // const getFirms = async () => {
   //   const url = "firms";
@@ -31,11 +31,11 @@ const Firms = () => {
 
   useEffect(() => {
     getFirms();
-    getSales();
+    getSales(); 
   }, []);
 
   return <div>Firms</div>;
 };
 
 export default Firms;
- 
+   
