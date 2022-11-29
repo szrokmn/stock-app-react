@@ -24,7 +24,7 @@ export default function FirmCard({ firm }) {
            {firm?.address} 
           </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions sx={{display:"flex", justifyContent:"center"}}>
         <EditIcon/>
         <DeleteOutlineIcon/>
       </CardActions>
