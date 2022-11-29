@@ -23,6 +23,6 @@ const useStockCalls = () => {
   return { getFirms, getSales };
 };
 
-export default useStockCalls
+export default useStockCalls;
 
  
