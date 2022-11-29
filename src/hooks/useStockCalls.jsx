@@ -7,6 +7,7 @@ const useStockCalls = () => {
   const dispatch = useDispatch();
   const { axiosWithToken } = useAxios();
 
+  //-------- GET CALLS --------
     const getStockData = async (url) => {
         dispatch(fetchStart());
         try {
@@ -19,6 +20,13 @@ const useStockCalls = () => {
       };
     const getFirms = () => getStockData("firms");
     const getSales = () => getStockData("sales");
+
+    //-------- DELETE CALLS ---------
+      const deleteStockData = async() => {
+
+      }
+
+      const deleteFirm = () => deleteStockData()
 
   return { getFirms, getSales };
 };
