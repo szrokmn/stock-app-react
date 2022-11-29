@@ -42,8 +42,7 @@ export default function FirmCard({ firm }) {
       </CardContent>
       <CardActions sx={{ display: "flex", justifyContent: "center" }}>
         <EditIcon sx={btnHoverStyle} />
-        <DeleteOutlineIcon
-          sx={btnHoverStyle}
+        <DeleteOutlineIcon sx={btnHoverStyle}
           onClick={() => deleteFirm(firm?.id)}
         />
       </CardActions>
