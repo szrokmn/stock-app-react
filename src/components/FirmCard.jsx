@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import EditIcon from "@mui/icons-material/Edit";
+import { btnHoverStyle } from '../styles/glovalStyle';
 
 export default function FirmCard({ firm }) {
   return (
@@ -25,8 +26,8 @@ export default function FirmCard({ firm }) {
           </Typography>
       </CardContent>
       <CardActions sx={{display:"flex", justifyContent:"center"}}>
-        <EditIcon/>
-        <DeleteOutlineIcon/>
+        <EditIcon sx={btnHoverStyle}/>
+        <DeleteOutlineIcon sx={btnHoverStyle}/>
       </CardActions>
     </Card>
   );
