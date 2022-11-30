@@ -14,9 +14,10 @@ import useStockCalls from "../hooks/useStockCalls";
 
 const Firms = () => {
 
-  const { getFirms, getSales } = useStockCalls();
+  const { getFirms } = useStockCalls();
   const { firms } = useSelector((state) => state.stock);
   const [open, setOpen] = useState(false);
+  const [info, setInfo] = useState({});
 
   // const dispatch = useDispatch();
   // const { token } = useSelector((state) => state.auth);
@@ -38,8 +39,7 @@ const Firms = () => {
   // };
 
   useEffect(() => {
-    getFirms();
-    getSales(); 
+    getFirms();   
   }, []);
 
   return (
@@ -50,13 +50,13 @@ const Firms = () => {
 
     <Button variant="contained" onClick={() => setOpen(true)}>New Firm</Button>
 
-    <FirmModal open={open} setOpen={setOpen}/>
+    <FirmModal open={open} setOpen={setOpen} info={info}/>
 
-    {firms?.length >0 && (
+    {firms?.length > 0 && (
       <Grid container justifyContent="center" gap={3}>
         {firms?.map((firm) => (
-          <Grid item>
-            <FirmCard key={firm.id} firm={firm}/>
+          <Grid item key={firm.id}>
+            <FirmCard firm={firm} setOpen={setOpen} setInfo={setInfo}/>
           </Grid>
         ))}        
       </Grid>
