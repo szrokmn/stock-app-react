@@ -11,8 +11,9 @@ const handleSubmit = (e) => {
 
 }
 
-const handleChange = () => {
-
+const handleChange = (e) => {
+  const { name, value } = e.target;
+  setInfo({...info, [name]: value })
 }
 
   return (
@@ -30,7 +31,7 @@ const handleChange = () => {
             id="name"
             type="text"
             variant="outlined"
-            // value={values.email}
+            value={info?.name || ""}
             onChange={handleChange}           
           />
           <Button type="submit" variant="contained">Submit Firm</Button>
