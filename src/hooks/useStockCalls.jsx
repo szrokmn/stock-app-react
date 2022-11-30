@@ -64,7 +64,7 @@ const useStockCalls = () => {
 
       const putFirm = (info) => putStockData(info, "firms")
 
-  return { getStockData, getFirms, getSales, deleteFirm, postFirm, postStockData, putFirm, };
+  return { getStockData, getFirms, getSales, deleteFirm, postFirm, postStockData, putFirm, putStockData };
 };
 
 export default useStockCalls;

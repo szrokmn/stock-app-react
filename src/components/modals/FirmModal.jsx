@@ -31,7 +31,10 @@ export default function FirmModal({ open, setOpen, info, setInfo }) {
     <div>
       <Modal
         open={open}
-        onClose={() => setOpen(false)}
+        onClose={() => {
+          setOpen(false); 
+          setInfo({});
+        }}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -43,6 +46,7 @@ export default function FirmModal({ open, setOpen, info, setInfo }) {
               id="name"
               type="text"
               variant="outlined"
+              required
               value={info?.name || ""}
               onChange={handleChange}
             />
@@ -52,6 +56,7 @@ export default function FirmModal({ open, setOpen, info, setInfo }) {
               id="phone"
               type="tel"
               variant="outlined"
+              required
               value={info?.phone || ""}
               onChange={handleChange}
             />
@@ -61,6 +66,7 @@ export default function FirmModal({ open, setOpen, info, setInfo }) {
               id="address"
               type="text"
               variant="outlined"
+              required
               value={info?.address || ""}
               onChange={handleChange}
             />
@@ -70,6 +76,7 @@ export default function FirmModal({ open, setOpen, info, setInfo }) {
               id="image"
               type="url"
               variant="outlined"
+              required
               value={info?.image || ""}
               onChange={handleChange}
             />
