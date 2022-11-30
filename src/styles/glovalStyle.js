@@ -17,5 +17,6 @@ export const modalStyle = {
 
   export const flexCenter = {
     display:"flex",
-    justifyContent: "center",
+    flexDirection: "column",
+    gap:2,
   }
