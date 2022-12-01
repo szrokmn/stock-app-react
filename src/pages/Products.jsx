@@ -13,6 +13,9 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import DeleteIcon from "@mui/icons-material/Delete";
 import { btnHoverStyle } from "../styles/glovalStyle";
+import UpgradeIcon from "@mui/icons-material/Upgrade";
+import VerticalAlignBottomcon from "@mui/icons-material/VerticalAlignBottom";
+
 
 
 const Products = () => {
@@ -46,7 +49,13 @@ const Products = () => {
               <TableRow>
                 <TableCell align="center">#</TableCell>
                 <TableCell align="center">Category</TableCell>
-                <TableCell align="center">Brand</TableCell>
+                <TableCell align="center">
+                  <Box>
+                  <div>Brand</div>
+                  {true && <UpgradeIcon/>}
+                  {false && <VerticalAlignIcon/>}
+                  </Box>
+                </TableCell>
                 <TableCell align="center">Name</TableCell>
                 <TableCell align="center">Stock</TableCell>
                 <TableCell align="center">Operation</TableCell>
